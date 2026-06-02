@@ -219,8 +219,6 @@ GET /api/bao_steel/steel_plate
 
 ### 1. 钢铁仓库 - 钢板识别
 
-![Steel Detection](https://via.placeholder.com/800x400?text=Steel+Plate+Detection)
-
 - 钢板位置与姿态检测
 - 钢板尺寸自动测量
 - 堆叠状态识别

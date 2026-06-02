@@ -219,8 +219,6 @@ GET /api/bao_steel/steel_plate
 
 ### 1. Steel Warehouse - Steel Plate Recognition
 
-![Steel Detection](https://via.placeholder.com/800x400?text=Steel+Plate+Detection)
-
 - Steel plate position and posture detection
 - Automatic steel plate dimension measurement
 - Stacking state recognition
