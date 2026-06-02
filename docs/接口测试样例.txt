@@ -1,0 +1,53 @@
+相机密码：
+Bgitv45654
+
+
+OCR测试样例：
+
+{
+    "ip": "192.168.3.62",
+    "mat_infos": [
+    {
+ "mat_no": "5526161500",
+        "mat_length": "60000",
+        "mat_width": "30000",
+        "mat_thick": "20",
+"mat_weight":1350
+    },
+    {
+ "mat_no": "5623295100",
+        "mat_length": "10066",
+        "mat_width": "4244",
+        "mat_thick": "28",
+"mat_weight":1350
+    }
+  ]
+}
+
+
+钢板测试样例：
+
+192.168.3.72
+Z:\ScanData\TPC10_20250714_697652695183366_192.168.2.199.xyz
+TPC10
+2288
+
+/api/bao_steel/steel_plate?ip=192.168.3.68&file_path=Z:\ScanData\TPC6_20260118_764198408859654_192.168.2.195.xyz&park_no=TPC6&height=1839&classId=2 HTTP/1.1
+
+
+
+Z%3a%5cScanData%5cTPC2_20260118_764254036926470_192.168.2.191.xyz
+
+
+
+
+
+
+{'status': 'success', 'results': [{'Ocr_Manufactor': '', 'Ocr_BatchNo': '', 'Ocr_Length': 0, 'Ocr_Width': 0, 'Ocr_Height': 0, 'Ocr_Weight': 0, 'Ocr_Code': '', 'Priority': 0, 'box': [[1522, 41578], [1577, 41578], [1577, 41648], [1522, 41648]], 'status': 'error', 'message': '第 1 个喷码未识别出结果'}], 'time_usage': {'total': '28.59s', 'camera_setup': 0.03, 'mat_info_check': 0.0, 'camera_shooting': 6.58, 'ocr_processing': 24.82, 'corner_detection': 7.0, 'yolo_detection': 0, 'camera_movement': 17.48, 'detail_processing': 0.88}}
+
+
+
+
+
+
+

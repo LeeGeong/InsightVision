@@ -1,0 +1,117 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.cpython-*.pyc
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Project specific
+*.log
+logs/
+*.db
+*.sqlite
+*.sqlite3
+
+# Static files (user uploaded)
+app/static/uploads/
+app/static/ocr_results/
+app/static/steel_output/
+app/static/yolo_results/
+!app/static/uploads/.gitkeep
+!app/static/ocr_results/.gitkeep
+!app/static/steel_output/.gitkeep
+!app/static/yolo_results/.gitkeep
+
+# Cache
+app/cache/
+*.standalone.js
+*.bundle.js
+*.css
+
+# Models (large binary files)
+models/
+
+# Test outputs
+test_output.txt
+*.output
+
+# Sample data files
+*.csv.gz
+*.json.gz
+LICENSE
+NOTICE
+airports.csv.gz
+bart-lines.json.gz
+birth_france_data_for_country_map.csv
+birth_names.json.gz
+birth_names2.json.gz
+countries.json.gz
+energy.json.gz
+flight_data.csv.gz
+multiformat_time_series.json.gz
+paris_iris.json.gz
+random_time_series.json.gz
+san_francisco.csv.gz
+sf_population.json.gz
+tutorial_flights.csv
+unicode_utf8_unixnl_test.csv
+
+# WSDL files (protocol definitions - optional)
+app/wsdl/
+app/utils/wsdl/

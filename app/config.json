@@ -1,0 +1,10 @@
+{
+  "cut" : {
+    "x_small": 12.5,
+    "x_large": 40,
+    "y_small": 84,
+    "y_large": 93,
+    "z_small": 0.1,
+    "z_large": 7
+  }
+}
