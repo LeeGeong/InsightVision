@@ -1,10 +1,10 @@
 <div align="center">
 
-![InsightVision Logo](https://img.shields.io/badge/InsightVision-智能视觉平台-009688?style=for-the-badge&logo=vision&logoColor=white)
+![InsightVision Logo](https://img.shields.io/badge/InsightVision-Industrial%20Vision%20Platform-009688?style=for-the-badge&logo=vision&logoColor=white)
 
-# InsightVision - 工业智能视觉平台
+# InsightVision - Industrial Intelligent Vision Platform
 
-*基于深度学习的工业场景智能视觉识别系统*
+*Deep Learning-based Intelligent Vision Recognition System for Industrial Scenarios*
 
 [![Python Version](https://img.shields.io/badge/Python-3.9+-4B8BBE?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110.2-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
@@ -14,25 +14,25 @@
 
 ---
 
-[English](README.md) | 简体中文
+[English](README.md) | [简体中文](README_zh.md)
 
 </div>
 
-## 📖 项目简介
+## 📖 Introduction
 
-**InsightVision** 是一款面向工业场景的智能视觉识别平台，专注于钢板识别、车牌 OCR、安全区域检测等核心功能。系统采用先进的深度学习算法，结合工业级相机管理能力，为钢铁、物流等行业提供高精度、高实时性的视觉解决方案。
+**InsightVision** is an intelligent vision recognition platform designed for industrial scenarios. It focuses on core functionalities such as steel plate recognition, license plate OCR, and safety zone detection. The system utilizes advanced deep learning algorithms combined with industrial-grade camera management capabilities to provide high-precision, real-time vision solutions for steel, logistics, and other industries.
 
-### 🎯 核心功能
+### 🎯 Core Features
 
-| 功能模块 | 技术栈 | 应用场景 |
-|---------|--------|---------|
-| **钢板识别** | YOLOv11 + 透视变换 | 钢铁仓库钢板位置检测 |
-| **OCR 识别** | PaddleOCR + YOLO | 车牌、钢板编号识别 |
-| **安全区域检测** | 点云处理 + 3D建模 | 作业区域安全监控 |
-| **相机管理** | ONVIF 协议 | 工业相机统一管控 |
-| **智能分析** | LLM (Ollama) | 复杂场景语义理解 |
+| Feature | Technology | Use Case |
+|---------|------------|----------|
+| **Steel Plate Recognition** | YOLOv11 + Perspective Transform | Steel warehouse plate positioning |
+| **OCR Recognition** | PaddleOCR + YOLO | License plates, plate number recognition |
+| **Safety Zone Detection** | Point Cloud Processing + 3D Modeling | Workplace safety monitoring |
+| **Camera Management** | ONVIF Protocol | Industrial camera unified control |
+| **Intelligent Analysis** | LLM (Ollama) | Complex scene semantic understanding |
 
-## 🏗️ 系统架构
+## 🏗️ System Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -45,7 +45,7 @@
 ├─────────────────────────────────────────────────────────────┤
 │  Core Services Layer                                         │
 │  ┌──────────────┐ ┌──────────────┐ ┌──────────────────────┐  │
-│  │ 视觉检测服务  │ │  OCR识别服务  │ │   相机管理服务        │  │
+│  │Vision Service│ │ OCR Service  │ │  Camera Service      │  │
 │  └──────────────┘ └──────────────┘ └──────────────────────┘  │
 ├─────────────────────────────────────────────────────────────┤
 │  Models Layer                                                │
@@ -55,121 +55,118 @@
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## 📁 项目结构
+## 📁 Project Structure
 
 ```
 InsightVision/
 ├── app/
-│   ├── api/                    # API 路由层
-│   │   ├── routes/             # 业务路由
-│   │   │   ├── bao_steel.py    # 宝钢钢板识别接口
-│   │   │   ├── device.py       # 设备管理接口
-│   │   │   ├── scene.py       # 场景管理接口
-│   │   │   ├── strategy.py    # 策略配置接口
-│   │   │   └── warning.py     # 告警管理接口
-│   │   └── main.py            # 路由汇总
+│   ├── api/                    # API Routes Layer
+│   │   ├── routes/             # Business Routes
+│   │   │   ├── bao_steel.py    # Baosteel Steel Plate Interface
+│   │   │   ├── device.py       # Device Management Interface
+│   │   │   ├── scene.py       # Scene Management Interface
+│   │   │   ├── strategy.py    # Strategy Configuration Interface
+│   │   │   └── warning.py     # Warning Management Interface
+│   │   └── main.py            # Route Aggregation
 │   │
-│   ├── core/                   # 核心业务逻辑
-│   │   ├── config/             # 系统配置
-│   │   ├── deploy/             # 模型部署
-│   │   │   └── python/         # Python 检测模型
-│   │   ├── services/           # 业务服务
+│   ├── core/                   # Core Business Logic
+│   │   ├── config/             # System Configuration
+│   │   ├── deploy/             # Model Deployment
+│   │   │   └── python/         # Python Detection Models
+│   │   ├── services/           # Business Services
 │   │   │   ├── bao_steel_services.py
 │   │   │   ├── camera_service.py
 │   │   │   └── ocr_service.py
-│   │   └── func_calc.py        # 函数计算工具
+│   │   └── func_calc.py        # Function Calculation Utilities
 │   │
-│   ├── models/                 # 数据模型
-│   │   ├── device.py          # 设备模型
-│   │   ├── scene.py           # 场景模型
-│   │   ├── strategy.py        # 策略模型
-│   │   └── warning.py         # 告警模型
+│   ├── models/                 # Data Models
+│   │   ├── device.py          # Device Model
+│   │   ├── scene.py           # Scene Model
+│   │   ├── strategy.py        # Strategy Model
+│   │   └── warning.py         # Warning Model
 │   │
-│   ├── schemas/                # Pydantic schemas
-│   ├── utils/                  # 工具函数
-│   │   ├── scan/              # 扫描识别模块
-│   │   └── wsdl/              # ONVIF 协议文件
+│   ├── schemas/                # Pydantic Schemas
+│   ├── utils/                  # Utility Functions
+│   │   ├── scan/              # Scan Recognition Module
+│   │   └── wsdl/              # ONVIF Protocol Files
 │   │
-│   ├── static/                 # 静态资源
-│   │   ├── uploads/           # 上传文件
-│   │   ├── ocr_results/       # OCR 结果
-│   │   └── steel_output/      # 钢板识别输出
+│   ├── static/                 # Static Resources
+│   │   ├── uploads/           # Uploaded Files
+│   │   ├── ocr_results/       # OCR Results
+│   │   └── steel_output/      # Steel Plate Recognition Output
 │   │
-│   ├── logs/                   # 日志目录
-│   ├── cache/                  # 缓存目录
+│   ├── logs/                   # Log Directory
+│   ├── cache/                  # Cache Directory
 │   │
-│   ├── startup.py             # 应用入口
-│   ├── requirements.txt       # 依赖清单
-│   └── config.json            # 配置文件
+│   ├── startup.py             # Application Entry Point
+│   ├── requirements.txt       # Dependencies
+│   └── config.json            # Configuration File
 │
-├── models/                     # 预训练模型
-│   └── FrameCar/              # 车辆检测模型
+├── tests/                      # Test Code
+│   ├── integration/           # Integration Tests
+│   ├── unit/                 # Unit Tests
+│   ├── test_config.py        # Test Configuration
+│   └── run_ocr_test.py       # OCR Test Script
 │
-├── tests/                      # 测试代码
-│   ├── integration/           # 集成测试
-│   ├── unit/                 # 单元测试
-│   ├── test_config.py        # 测试配置
-│   └── run_ocr_test.py       # OCR 测试脚本
+├── docs/                       # Development Documentation
 │
-├── docs/                       # 开发文档
-│
-└── README.md                  # 项目文档
+└── README.md                  # Project Documentation
 ```
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-### 环境要求
+### Requirements
 
 - Python 3.9+
-- CUDA 11.8+ (GPU 加速)
+- CUDA 11.8+ (GPU Acceleration)
 - 8GB+ RAM
 
-### 安装依赖
+### Install Dependencies
 
 ```bash
 cd app
 pip install -r requirements.txt
 ```
 
-### 启动服务
+### Start Service
 
 ```bash
 cd app
 python startup.py
 ```
 
-服务启动后访问：
-- API 文档: http://localhost:8001/docs
-- ReDoc 文档: http://localhost:8001/redoc
+After starting, access:
+- API Documentation: http://localhost:8001/docs
+- ReDoc Documentation: http://localhost:8001/redoc
 
-### 运行测试
+### Run Tests
 
 ```bash
-# 使用测试脚本
+# Using test script
 python tests/run_ocr_test.py --config TCP7
 
-# 使用 pytest
+# Using pytest
 pytest tests/integration/test_ocr_integration.py -v
 ```
 
-## 📡 API 接口
+## 📡 API Interface
 
-### 钢板识别
+### Steel Plate Recognition
 
 ```
 GET /api/bao_steel/steel_plate
 ```
 
-**请求参数：**
+**Request Parameters:**
 
-| 参数 | 类型 | 必填 | 说明 |
-|------|------|------|------|
-| ip | string | 是 | 相机 IP 地址 |
-| park_no | string | 是 | 车位编号 |
-| height | int | 否 | 高度阈值 |
-| classId | int | 否 | 目标类别 ID |
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| ip | string | Yes | Camera IP Address |
+| park_no | string | Yes | Parking Spot Number |
+| height | int | No | Height Threshold |
+| classId | int | No | Target Class ID |
 
-**响应示例：**
+**Response Example:**
 
 ```json
 {
@@ -193,60 +190,60 @@ GET /api/bao_steel/steel_plate
 }
 ```
 
-## 🔧 技术栈
+## 🔧 Tech Stack
 
-### 核心框架
+### Core Frameworks
 
 <div align="center">
 
-| 类别 | 技术 | 版本 |
-|------|------|------|
-| Web 框架 | FastAPI | 0.110.2 |
-| OCR 引擎 | PaddleOCR | 2.7.3 |
-| 目标检测 | YOLOv11 | ultralytics |
-| 深度学习 | PaddlePaddle | 2.6.1 |
-| 点云处理 | Open3D | 0.18.0 |
-| 图像处理 | OpenCV | 4.6.0.66 |
+| Category | Technology | Version |
+|----------|------------|---------|
+| Web Framework | FastAPI | 0.110.2 |
+| OCR Engine | PaddleOCR | 2.7.3 |
+| Object Detection | YOLOv11 | ultralytics |
+| Deep Learning | PaddlePaddle | 2.6.1 |
+| Point Cloud | Open3D | 0.18.0 |
+| Image Processing | OpenCV | 4.6.0.66 |
 
 </div>
 
-### 辅助工具
+### Supporting Tools
 
-- **数据库**: SQLite + SQLModel
-- **相机协议**: ONVIF
-- **AI 推理**: Ollama (本地 LLM)
-- **日志**: Loguru
-- **数据可视化**: Plotly
+- **Database**: SQLite + SQLModel
+- **Camera Protocol**: ONVIF
+- **AI Inference**: Ollama (Local LLM)
+- **Logging**: Loguru
+- **Data Visualization**: Plotly
 
-## 📊 应用场景
+## 📊 Application Scenarios
 
-### 1. 钢铁仓库 - 钢板识别
+### 1. Steel Warehouse - Steel Plate Recognition
 
 ![Steel Detection](https://via.placeholder.com/800x400?text=Steel+Plate+Detection)
 
-- 钢板位置与姿态检测
-- 钢板尺寸自动测量
-- 堆叠状态识别
+- Steel plate position and posture detection
+- Automatic steel plate dimension measurement
+- Stacking state recognition
 
-### 2. 物流园区 - 车牌 OCR
+### 2. Logistics Park - License Plate OCR
 
-- 车辆进出自动登记
-- 车牌号自动识别
-- 车辆类型分类
+- Automatic vehicle entry/exit registration
+- Automatic license plate number recognition
+- Vehicle type classification
 
-### 3. 安全生产 - 安全区域监控
+### 3. Production Safety - Safety Zone Monitoring
 
-- 作业区域入侵检测
-- 人员安全防护监控
-- 异常行为预警
+- Work area intrusion detection
+- Personnel safety protection monitoring
+- Anomalous behavior early warning
 
-## 🛠️ 开发指南
+## 🛠️ Development Guide
 
-### 添加新的检测模型
+### Adding New Detection Models
 
-1. 将模型文件放入 `models/` 目录
-2. 在 `app/core/deploy/python/` 创建推理脚本
-3. 在服务层调用模型进行推理
+1. Place model files in `models/` directory
+2. Create inference scripts in `app/core/deploy/python/`
+3. Call the model in the service layer
 
 ```python
 from app.core.deploy.python.test_infer_steel import init_detector_steel
@@ -255,11 +252,11 @@ detector, flags = init_detector_steel()
 result = detector.predict(image)
 ```
 
-### 添加新的 API 路由
+### Adding New API Routes
 
-1. 在 `app/api/routes/` 创建路由文件
-2. 定义 Router 并添加业务逻辑
-3. 在 `app/api/main.py` 注册路由
+1. Create route file in `app/api/routes/`
+2. Define Router and add business logic
+3. Register route in `app/api/main.py`
 
 ```python
 from fastapi import APIRouter
@@ -271,35 +268,35 @@ async def your_function():
     return {"message": "Hello"}
 ```
 
-## 📝 接口文档
+## 📝 Documentation
 
-更多接口文档请参考：
+For more documentation:
 
-- [快速开始指南](tests/QUICKSTART.md)
-- [测试文档](tests/README.md)
-- [API 测试样例](docs/接口测试样例.txt)
+- [Quick Start Guide](tests/QUICKSTART.md)
+- [Test Documentation](tests/README.md)
+- [API Test Examples](docs/接口测试样例.txt)
 
-## 🤝 贡献指南
+## 🤝 Contributing
 
-1. Fork 本仓库
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 创建 Pull Request
+1. Fork this repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Create a Pull Request
 
-## 📄 许可证
+## 📄 License
 
-本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👥 联系我们
+## 👥 Contact
 
-如有问题或建议，请提交 Issue 或联系项目维护者。
+For questions or suggestions, please submit an Issue or contact the project maintainers.
 
 ---
 
 <div align="center">
 
-**InsightVision** - 让工业视觉更智能
+**InsightVision** - Making Industrial Vision Smarter
 
 *Built with ❤️ for Industrial Vision*
 
